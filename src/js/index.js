@@ -1,26 +1,26 @@
-// Resultado
-let testInput = document.getElementById("resultado");
-console.log(typeof testInput.value);
-// Teclas numericas
+// Teclas
 
-let teclasNumericas = document.querySelectorAll("button.num");
+const teclas = document.querySelectorAll("button.num, button.ope");
 
-teclasNumericas.forEach((botao) => {
+const teclasDeAcao = document.querySelectorAll("button.acao");
+
+teclas.forEach((botao) => {
   botao.addEventListener("click", teclasExibidas);
-  function teclasExibidas(numero) {
-    console.log(numero.target.innerText);
-  }
 });
 
-// Teclas Operacionais
-
-let teclasOperacionais = document.querySelectorAll("button.ope");
-
-teclasOperacionais.forEach((element) => {
-  element.addEventListener("click", teclasExibidasOpe);
-  function teclasExibidasOpe(operadores) {
-    console.log(operadores.target.innerText);
-  }
-});
+let expressaoAtual = "";
 
 // função
+
+function teclasExibidas(tecla) {
+  console.log(tecla.target.innerText);
+  expressaoAtual += tecla.target.innerText;
+  console.log("Expressão atual:", expressaoAtual);
+  inputResultado.value = expressaoAtual;
+}
+
+let inputResultado = document.getElementById("resultado");
+
+console.log(inputResultado);
+
+// Expressão

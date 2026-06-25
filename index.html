@@ -14,14 +14,13 @@
   </head>
   <body>
     <main>
-      <div class="modeloCalculadora">
+      <div class="modeloDaCalculadora">
         <section class="resultado">
-          <input type="number"
-          
-          id="resultado"></input>
+          <input type="text" id="resultado"  onfocus="this.blur();" value="0">
+        </input>
         </section>
         <section class="modeloDeTeclas">
-          <div id="teclasNum">
+          <div id="teclasDeNum">
             <button class="num">1</button>
             <button class="num">2</button>
             <button class="num">3</button>
@@ -33,12 +32,19 @@
             <button class="num">9</button>
             <button class="num">0</button>
           </div>
-          <div class="teclasOperacoes">
+          <div class="teclasDeOperacoes">
             <button class="ope">+</button>
             <button class="ope">-</button>
             <button class="ope">x</button>
             <button class="ope">/</button>
-            <button class="ope">=</button>
+          </div>
+          <div class="teclasDeAcao"> 
+            <button class="acao">=</button>
+            <button class="acao">C</button>
+            <button class="acao"> <-X </button>
+
+
+
           </div>
         </section>
       </div>

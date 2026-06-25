@@ -7,7 +7,7 @@ main {
   background-color: darkslategrey;
 }
 
-main div.modeloCalculadora {
+main div.modeloDaCalculadora {
   background-color: rgb(143, 143, 143);
   width: 300px;
   height: 450px;
@@ -19,59 +19,70 @@ main div.modeloCalculadora {
   padding: 20px;
 }
 
-main div.modeloCalculadora section.resultado {
-  background-color: rgba(38, 59, 40, 0.884);
-  width: 90%;
+main div.modeloDaCalculadora section.resultado {
+  width: 95%;
   height: 70px;
   border-radius: 10px;
   color: white;
   align-content: center;
-  padding: 10px;
 }
 
-main div.modeloCalculadora section.resultado p {
+main div.modeloDaCalculadora section.resultado #resultado {
+  width: 100%;
   text-align: end;
+  background-color: greenyellow;
   font-size: 30px;
 }
-main div.modeloCalculadora section.modeloDeTeclas {
+main div.modeloDaCalculadora section.modeloDeTeclas {
   display: flex;
   flex-direction: row;
   gap: 20px;
   font-size: 25px;
 }
+main div.modeloDaCalculadora section.modeloDeTeclas div#teclasNum {
+  padding: 0 10px;
+}
 
-main div.modeloCalculadora section.modeloDeTeclas div.teclasOperacoes {
+main
+  div.modeloDaCalculadora
+  section.modeloDeTeclas
+  div#teclasNum
+  button:last-child {
+  flex: 1;
+}
+
+main div.modeloDaCalculadora section.modeloDeTeclas div.teclasOperacoes {
   margin: 0 0 10px;
   flex-direction: column;
 }
 
 main
-  div.modeloCalculadora
+  div.modeloDaCalculadora
   section.modeloDeTeclas
   div.teclasOperacoes
   button:last-child {
-  background-color: rgb(46, 248, 46);
+  background-color: greenyellow;
 }
 
-main div.modeloCalculadora section.modeloDeTeclas div.teclasNum {
+main div.modeloDaCalculadora section.modeloDeTeclas div.teclasNum {
   width: 170px;
 }
 
 main
-  div.modeloCalculadora
+  div.modeloDaCalculadora
   section.modeloDeTeclas
   div.teclasNum
   button:last-child {
   flex-grow: 1;
 }
 
-main div.modeloCalculadora section.modeloDeTeclas div {
+main div.modeloDaCalculadora section.modeloDeTeclas div {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-main div.modeloCalculadora section.modeloDeTeclas div button {
+main div.modeloDaCalculadora section.modeloDeTeclas div button {
   background-color: antiquewhite;
   cursor: pointer;
   width: 50px;
