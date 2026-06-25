@@ -1,26 +1,43 @@
-// Teclas
+// Teclas numericas e operadoras
 
 const teclas = document.querySelectorAll("button.num, button.ope");
-
-const teclasDeAcao = document.querySelectorAll("button.acao");
 
 teclas.forEach((botao) => {
   botao.addEventListener("click", teclasExibidas);
 });
 
-let expressaoAtual = "";
-
-// função
-
-function teclasExibidas(tecla) {
-  console.log(tecla.target.innerText);
-  expressaoAtual += tecla.target.innerText;
-  console.log("Expressão atual:", expressaoAtual);
-  inputResultado.value = expressaoAtual;
-}
+// Input do resultado exibido
 
 let inputResultado = document.getElementById("resultado");
 
-console.log(inputResultado);
+// variavel que armazena
 
-// Expressão
+let expressaoAtual = "";
+
+// tecla de reset com evento de click, que aciona a função
+let teclaDeReset = document.querySelector("button.reset");
+teclaDeReset.addEventListener("click", limpar);
+
+// tecla de calculo
+let teclaDeCalculo = document.querySelector("button.calculo");
+console.log(teclaDeCalculo);
+teclaDeCalculo.addEventListener("click", calcular);
+
+// função de pegar as teclas e o armazenamento tenham valor e sejam exibidos no resultado
+
+function teclasExibidas(tecla) {
+  expressaoAtual += tecla.target.innerText;
+  inputResultado.value = expressaoAtual;
+}
+
+// função de limpar o resultado
+function limpar() {
+  expressaoAtual = "";
+  inputResultado.value = "";
+}
+
+function calcular() {
+  teclaDeCalculo = eval(expressaoAtual);
+  expressaoAtual = teclaDeCalculo;
+  inputResultado.value = teclaDeCalculo;
+}
