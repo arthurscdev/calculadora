@@ -4,7 +4,11 @@ let teclasNumericas = document.querySelectorAll("button.num");
 
 let teclasOperadoras = document.querySelectorAll("button.ope");
 
+let teclasSuportes = document.querySelector("button.dec");
+
 let operadores = ["+", "-", "*", "/"];
+
+let suportes = ".";
 
 let inputResultado = document.getElementById("resultado");
 
@@ -18,13 +22,15 @@ let teclaApagar = document.querySelector("button.apagar");
 
 // eventos
 
+teclasNumericas.forEach((num) =>
+  num.addEventListener("click", teclasNumericasClicadas),
+);
+
 teclasOperadoras.forEach((ope) =>
   ope.addEventListener("click", teclasOperadorasClicadas),
 );
 
-teclasNumericas.forEach((num) =>
-  num.addEventListener("click", teclasNumericasClicadas),
-);
+teclasSuportes.addEventListener("click", teclasSuportesClicadas);
 
 teclaDeReset.addEventListener("click", limpar);
 
@@ -49,6 +55,28 @@ function verificarSeEOperado() {
   if (operadores.includes(expressaoAtual.slice(-1))) {
     expressaoAtual = expressaoAtual.slice(0, -1);
   }
+}
+
+function teclasSuportesClicadas() {
+  if (temDecimal()) {
+  } else {
+    expressaoAtual += suportes;
+    inputResultado.value = expressaoAtual;
+  }
+}
+
+function temDecimal() {
+  let maiorIndice = -1;
+
+  operadores.forEach((i) => {
+    let indiceAtual = expressaoAtual.lastIndexOf(i);
+    if (indiceAtual > maiorIndice) {
+      maiorIndice = indiceAtual;
+    }
+  });
+
+  let numeroAtual = expressaoAtual.slice(maiorIndice + 1);
+  return numeroAtual.includes(suportes);
 }
 
 function limpar() {
