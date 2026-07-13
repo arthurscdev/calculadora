@@ -63,11 +63,17 @@ function verificarSeEOperado() {
 }
 
 function teclasSuportesClicadas() {
-  if (temDecimal()) {
-  } else {
-    expressaoAtual += suportes;
+  if (expressaoAtual == "" || operadores.includes(expressaoAtual.slice(-1))) {
+    expressaoAtual += "0.";
     inputResultado.value = expressaoAtual;
+    return;
   }
+
+  if (temDecimal()) {
+    return;
+  }
+  expressaoAtual += suportes;
+  inputResultado.value = expressaoAtual;
 }
 
 function temDecimal() {
@@ -90,6 +96,9 @@ function limpar() {
 }
 
 function calcular() {
+  if (operadores.includes(expressaoAtual.slice(-1))) {
+    return;
+  }
   teclaDeCalculo = eval(expressaoAtual);
   inputResultado.value = teclaDeCalculo;
 }
