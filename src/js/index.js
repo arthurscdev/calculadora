@@ -46,7 +46,12 @@ function teclasNumericasClicadas(event) {
 }
 
 function teclasOperadorasClicadas(event) {
+  if (expressaoAtual == "") {
+    return;
+  }
+
   verificarSeEOperado();
+
   expressaoAtual += event.target.innerText;
   inputResultado.value = expressaoAtual;
 }
