@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
-li{
-    list-style: none;
+html,
+body {
+  touch-action: manipulation;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }

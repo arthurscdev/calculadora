@@ -18,6 +18,10 @@ Projeto desenvolvido durante meus estudos de JavaScript com foco em manipulaçã
 
 ![Imagem da calculadora](src/images/calculadoPreview.png)
 
+### Atualização
+---
+![Imagem da calculadora](src/images/calculadoraPreviewAtualizada.png)
+
 ## Tecnologias
 
 - HTML
